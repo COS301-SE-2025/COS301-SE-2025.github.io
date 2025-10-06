@@ -10,7 +10,7 @@
 .chip-item {
 	display: inline-block;
 	padding: 0 25px;
-	height: 50px;
+	/* height: 50px; */
 	font-size: 16px;
 	line-height: 50px;
 	border-radius: 25px;
@@ -83,7 +83,6 @@
 
 .caption {
 	overflow: scroll;
-	-webkit-overflow-scrolling: touch;
 }
 
 html, body, div, span, applet, object,
@@ -1321,6 +1320,7 @@ input, select, textarea {
 		cursor: default;
 		padding: 25px 45px 25% 45px;
 		
+		
 	}
 
 		.poptrox-popup:before {
@@ -1403,17 +1403,21 @@ input, select, textarea {
 			cursor: default;
 			left: 0;
 			position: relative;
-			overflow-y: auto; /* has to be scroll, not auto */
-			-webkit-overflow-scrolling: touch;
+			overflow-y: scroll; /* has to be scroll, not auto */
+			touch-action: pan-y;
+			-webkit-overflow-scrolling: touch !important;
+			overflow-x: hidden;
 			width: 80%;
-			z-index: 2;
+			z-index: 202 !important;
 			height: 450px;
 			margin: 0 auto !important;
 			text-align: center;
 			padding-left: 20px;
 			padding-right: 20px;
+			scroll-behavior: smooth
 		}
 
+		
 			.poptrox-popup .caption h2, .poptrox-popup .caption h3, .poptrox-popup .caption h4, .poptrox-popup .caption h5, .poptrox-popup .caption h6 {
 				margin: 0 0 0.5em 0;
 			}
@@ -1488,9 +1492,10 @@ input, select, textarea {
 			.poptrox-popup, .caption, .poptrox-overlay {
 				/* display: none !important; */
 				/* overflow: scroll !important; */
-				overflow-y: scroll; /* has to be scroll, not auto */
-				-webkit-overflow-scrolling: touch;
-			
+				overflow-y: scroll !important; /* has to be scroll, not auto */
+				touch-action: pan-y;
+				 
+					
 			}
 		}
 
